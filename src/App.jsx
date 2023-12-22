@@ -1,4 +1,5 @@
 import  { useEffect, useState } from "react";
+import { Input } from "./Styled/Input";
 
 const App = () => {
   const [search, setSearch] = useState('');
@@ -38,7 +39,7 @@ console.log(filteredItems);
   return (
     <div>
       <form >
-        <input
+        <Input
           type="text"
           value={search}
           onChange={handleChange}
@@ -47,6 +48,7 @@ console.log(filteredItems);
         
       </form>
       <ul>
+        {filteredItems.length}
         {filteredItems.length > 0 ? (
           filteredItems.map((mobile) => (
             <li key={mobile.id}>
