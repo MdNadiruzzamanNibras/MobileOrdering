@@ -1,43 +1,65 @@
-import { useEffect, useState } from "react";
-
+import  { useEffect, useState } from "react";
 
 const App = () => {
-  const [search, setSearch] = useState('')
-  const [items, setItems] = useState([])
-   const [searchResult, setSearchResult] = useState([]);
+  const [search, setSearch] = useState('');
+  const [items, setItems] = useState([]);
+
   useEffect(() => {
     fetch('data.json')
       .then(res => res.json())
-    .then(data=> setItems(data))
-  }, [])
-  console.log(search,"kdi");
+      .then(data => {
+        setItems(data);
+      });
+  }, []);
+
   const handleChange = (e) => {
-    setSearch(e.target.value)
-  }
-  const handleSubmit = (e) => {
-    e.preventDefault()
-   setSearch(e.target.value);
-  
-  const filteredMobiles = items.filter((item) => {
-    return (
-      item.name.toLowerCase().includes(search.toLowerCase()) ||
-      item.brand.toLowerCase().includes(search.toLowerCase()) ||
-      item.processor.toLowerCase().includes(search.toLowerCase()) ||
-      item.OS.toLowerCase().includes(search.toLowerCase())
-    );
-  });
-    setSearchResult(filteredMobiles)
-  }
-  console.log(searchResult);
+    setSearch(e.target.value);
+  };
+
+ 
+
+  const filterData = (search, items) => {
+    if (search === '') {
+      return items; 
+    } else {
+      return items.filter((item) => {
+        return (
+          item.name.toLowerCase().includes(search.toLowerCase()) ||
+          item.brand.toLowerCase().includes(search.toLowerCase()) ||
+          item.processor.toLowerCase().includes(search.toLowerCase()) ||
+          item.OS.toLowerCase().includes(search.toLowerCase())
+        );
+      });
+    }
+  };
+
+  const filteredItems = filterData(search, items);
+console.log(filteredItems);
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text"
+      <form >
+        <input
+          type="text"
           value={search}
           onChange={handleChange}
-          style={{}} /> <button type="submit"> search</button>
+          placeholder="Search by name, brand, processor, OS"
+        />
+        
       </form>
-      
+      <ul>
+        {filteredItems.length > 0 ? (
+          filteredItems.map((mobile) => (
+            <li key={mobile.id}>
+              <p>Name: {mobile.name}</p>
+              <p>Brand: {mobile.brand}</p>
+              <p>Processor: {mobile.processor}</p>
+              <p>Price: {mobile.price}</p>
+            </li>
+          ))
+        ) : (
+          <p>No results found.</p>
+        )}
+      </ul>
     </div>
   );
 };
