@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Example Phone 1",
+    "brand": "Brand A",
+    "price": 599.99,
+    "type": "Smartphone",
+    "processor": "Snapdragon 888",
+    "memory": "8GB RAM, 128GB Storage",
+    "OS": "Android 12"
+  },
+  {
+    "id": 2,
+    "name": "Example Phone 2",
+    "brand": "Brand B",
+    "price": 699.99,
+    "type": "Smartphone",
+    "processor": "Apple A15 Bionic",
+    "memory": "6GB RAM, 256GB Storage",
+    "OS": "iOS 15"
+  },
+  {
+    "id": 3,
+    "name": "Example Phone 3",
+    "brand": "Brand Cd",
+    "price": 499.99,
+    "type": "Feature Phone",
+    "processor": "N/A",
+    "memory": "512MB RAM, 4GB Storage",
+    "OS": "Proprietary"
+  },
+  {
+    "id": 4,
+    "name": "Example Phone 3",
+    "brand": "Brand kd",
+    "price": 499.99,
+    "type": "Feature Phone",
+    "processor": "N/A",
+    "memory": "512MB RAM, 4GB Storage",
+    "OS": "Proprietary"
+  },
+  {
+    "id": 5,
+    "name": "Example Phone 3",
+    "brand": "Nokia",
+    "price": 499.99,
+    "type": "Feature Phone",
+    "processor": "N/A",
+    "memory": "512MB RAM, 4GB Storage",
+    "OS": "Proprietary"
+  },
+  {
+    "id": 6,
+    "name": "Example Phone 3",
+    "brand": "Brand C",
+    "price": 499.99,
+    "type": "Feature Phone",
+    "processor": "N/A",
+    "memory": "512MB RAM, 4GB Storage",
+    "OS": "Proprietary"
+  },
+  {
+    "id": 7,
+    "name": "Example Phone 4",
+    "brand": "Brand A",
+    "price": 390,
+    "type": "Smartphone",
+    "processor": "Exynos 2100",
+    "memory": "12GB RAM, 512GB Storage",
+    "OS": "Android 12"
+  }
+]
