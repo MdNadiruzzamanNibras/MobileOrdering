@@ -1,5 +1,6 @@
 import  { useEffect, useState } from "react";
 import { Input } from "./Styled/Input";
+import { InputDiv } from "./Styled/InputDiv";
 
 const App = () => {
   const [search, setSearch] = useState('');
@@ -38,6 +39,7 @@ const App = () => {
 console.log(filteredItems);
   return (
     <div>
+      <InputDiv>
       <form >
         <Input
           type="text"
@@ -47,6 +49,7 @@ console.log(filteredItems);
         />
         
       </form>
+      </InputDiv>
       <ul>
         {filteredItems.length}
         {filteredItems.length > 0 ? (
